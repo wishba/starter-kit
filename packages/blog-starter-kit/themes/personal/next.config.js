@@ -73,21 +73,17 @@ const config = {
 		],
 	},
 	async rewrites() {
-		return [
-			{
-				source: '/ping/data-event',
-				destination: `${ANALYTICS_BASE_URL}/api/data-event`,
-			},
-			{
-				source: '/ping/view',
-				destination: `${ANALYTICS_BASE_URL}/api/view`,
-			},
-			{
-				source: '/api/collect',
-				destination: `${ADVANCED_ANALYTICS_BASE_URL}/api/collect`,
-			},
-		];
-	},
+    return [
+      {
+        source: "/blog",
+        destination: "https://wishba-notes.vercel.app/",
+      },
+      {
+        source: "/blog/:path*",
+        destination: "https://wishba-notes.vercel.app/blog/:path*",
+      },
+    ];
+  },
 	async redirects() {
 		return await getRedirectionRules();
 	},
